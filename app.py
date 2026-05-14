@@ -17,8 +17,9 @@ st.set_page_config(page_title="NATHOR OS", layout="wide", initial_sidebar_state=
 # ☁️ CONEXIÓN DEFINITIVA A SUPABASE ☁️
 # ==========================================
 def conectar_db():
-    # CAMBIO: Usamos el puerto 6543 y el link de 'pooler' para evitar el error de conexión
-    URI = "postgresql://postgres:40928478niqo@aws-0-sa-east-1.pooler.supabase.com:6543/postgres"
+    # CAMBIO: Agregamos el identificador del proyecto al usuario para que Supabase sepa quién es el 'tenant'
+    # El formato es: postgres.tu_codigo_de_proyecto:tu_clave@servidor
+    URI = "postgresql://postgres.spnksfiyyjkcolgsjjim:40928478niqo@aws-0-sa-east-1.pooler.supabase.com:6543/postgres"
     return psycopg2.connect(URI)
 
 def inicializar_db():
