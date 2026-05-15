@@ -17,7 +17,8 @@ st.set_page_config(page_title="NATHOR OS", layout="wide", initial_sidebar_state=
 # ☁️ CONEXIÓN DEFINITIVA A SUPABASE ☁️
 # ==========================================
 def conectar_db():
-    URI = "postgresql://postgres:40928478niqo@db.spnksfiyyjkcolgsjjim.supabase.co:5432/postgres"
+    # EL LINK DEFINITIVO (Pooler + IPv4 + Tu Identificador)
+    URI = "postgresql://postgres.spnksfiyyjkcolgsjjim:40928478niqo@aws-0-sa-east-1.pooler.supabase.com:6543/postgres"
     return psycopg2.connect(URI)
 
 def inicializar_db():
